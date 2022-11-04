@@ -21,6 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'axoz#4qolef5mzmvxtgw3+v)0a5)1!m$yqbxy-bs=4(b&t*cn)'
+    # os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -55,7 +56,10 @@ ROOT_URLCONF = 'job_scraping_service.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            'templates',
+            os.path.join(BASE_DIR, 'scraping/templates/scraping/'),
+                 ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
