@@ -56,10 +56,7 @@ ROOT_URLCONF = 'job_scraping_service.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            'templates',
-            os.path.join(BASE_DIR, 'scraping/templates/scraping/'),
-                 ],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
