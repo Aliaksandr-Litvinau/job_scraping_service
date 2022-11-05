@@ -2,12 +2,13 @@
 
 {% block content %}
 {% for object in object_list %}
+
 <div class="card my-3">
     <div class="card-header">
         <a href="{{object.url}}">{{object.title}}</a>
     </div>
     <div class="card-body">
-
+        <h4>{{object.company}} </h4>
         <p class="card-text">{{object.description}}</p>
         <p>{{object.city.name}} | {{object.prog_lang.name}} |
             <small>{{object.timestamp|date:"d-m-Y"}}</small></p>
@@ -16,8 +17,13 @@
 
 {% empty %}
 
-<h3>Unfortunately, nothing was found for your request...<br>
-    Please specify the entered search parameters...</h3>
+<div class="row ">
+    <div class="col-md-8 mx-auto my-2">
+        <p class="">
+        <h3>Unfortunately, nothing was found for your request...<br>
+            Please specify the entered search parameters...</h3>
+    </div>
+</div>
 
 {% endfor %}
 
