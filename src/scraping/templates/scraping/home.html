@@ -15,9 +15,9 @@
 </div>
 {% endfor %}
 
-<form action="https://www.google.com/search" method="GET">
+<form action="" method="POST">{% csrf_token %}
     <label for="fname">City:</label><br>
-    <input type="text" id="fname" name="q"><br>
+    <input type="text" id="fname" name="city"><br>
 
     <input type="submit" value="Submit">
 </form>
