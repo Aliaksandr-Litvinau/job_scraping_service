@@ -15,10 +15,11 @@
 </div>
 {% endfor %}
 
-<form action="" method="POST">{% csrf_token %}
-    <label for="fname">City:</label><br>
-    <input type="text" id="fname" name="city"><br>
-
+<form action="" method="GET">
+    <label>City:</label><br>
+    <input type="text" name="city"><br>
+    <label>Programming language:</label><br>
+    <input type="text" name="prog_lang"><br>
     <input type="submit" value="Submit">
 </form>
 {% endblock content %}
