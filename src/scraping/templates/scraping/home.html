@@ -16,7 +16,9 @@
 {% endfor %}
 
 <form action="" method="GET">
-    {{form.as_p}}
-    <input type="submit" value="Submit">
+    <div class="form-group">
+        {{form.as_p}}
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 {% endblock content %}
