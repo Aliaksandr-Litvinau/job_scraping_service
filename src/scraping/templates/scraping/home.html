@@ -16,10 +16,7 @@
 {% endfor %}
 
 <form action="" method="GET">
-    <label>City:</label><br>
-    <input type="text" name="city"><br>
-    <label>Programming language:</label><br>
-    <input type="text" name="prog_lang"><br>
+    {{form.as_p}}
     <input type="submit" value="Submit">
 </form>
 {% endblock content %}
