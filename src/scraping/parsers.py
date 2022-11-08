@@ -4,6 +4,8 @@ from random import randint
 import requests
 from bs4 import BeautifulSoup as BS
 
+__all__ = ('work', 'dou', 'djinni')
+
 headers = [
     {
         'User-Agent': 'Mozilla/5.0 (Windows NT 5.1; rv:47.0) Gecko/20100101 Firefox/47.0',
@@ -18,8 +20,8 @@ headers = [
 
 
 def work(url):
-    domain = "https://www.work.ua/"
-    response = requests.get(url, headers=headers)
+    domain = "https://www.work.ua/ru/jobs/"
+    response = requests.get(url, headers=headers[randint(0, 2)])
 
     jobs = []
     errors = []
@@ -118,11 +120,3 @@ def djinni(url, city=None, language=None):
             errors.append({'url': url, 'title': "Page do not response"})
 
     return jobs, errors
-
-
-if __name__ == '__main__':
-    url = 'https://djinni.co/jobs/?location=%D0%9A%D0%B8%D0%B5%D0%B2&primary_keyword=Python'
-    jobs, errors = djinni(url)
-
-    with codecs.open("work.json", "w", "utf-8") as handler:
-        handler.write(str(jobs))
